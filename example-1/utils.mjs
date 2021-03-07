@@ -27,6 +27,9 @@ export function createPage(title) {
             <li>
                 <a href="/page-3">Page 3</a>
             </li>
+            <li>
+                <a href="/page-4">Page 4</a>
+            </li>
         </ul>
         <h1>${title}</h1>
         <hr />

@@ -6,8 +6,8 @@ const ROUTES = {
     PAGE1: '/page-1',
     PAGE2: '/page-2',
     PAGE3: '/page-3',
+    PAGE4: '/page-4',
 }
-
 
 let server = createServer((request, response ) => {
     switch(request.url){
@@ -68,6 +68,19 @@ let server = createServer((request, response ) => {
                 before the max-age value is fulfilled, let the browser serve the page from the cache and not come to me."
           */
           "cache-control": "max-age=10"
+        })
+        response.end(html);
+        break;
+      }
+
+
+      case ROUTES.PAGE4: {
+        let html = createPage("Page4");
+        response.writeHead(200, {
+          //  if a request for the time is repeated within the next 1 second, the previously cached value will still be fresh, and used as-is, without any revalidation.
+          // If a request is repeated between 1 and 60 seconds later, then the cached value will be stale, but will be used to fulfill the API request. At the same time, "in the background," a revalidation request will be made to populate the cache with a fresh value for future use.
+          // If a request is repeated between 1 and 60 seconds later, then the cached value will be stale, but will be used to fulfill the API request. At the same time, "in the background," a revalidation request will be made to populate the cache with a fresh value for future use.
+          "cache-control": "max-age=1, stale-while-revalidate=59"
         })
         response.end(html);
         break;

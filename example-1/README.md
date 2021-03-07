@@ -43,6 +43,18 @@ Tab2
 But if you immediately reload the page and keeping doing so before the expire time hits
 your browser will be the one serving the content instead of needing to go to the server.
 
+
+## Observation 6
+TODO create an example like the one used by Google here: https://web.dev/stale-while-revalidate/
+As such, SwR allows you to trade off three things:
+https://www.mnot.net/blog/2014/06/01/chrome_and_stale-while-revalidate
+- traffic to your server
+- freshness of responses
+- end-user perceived latency
+in a much more fine-grained manner than vanilla HTTP caching.
+
+
+
 NOTE: if you reload the page with `cmd-r` it will not use the cache, but if you click a link (page 1) then go to page3, it will use the cache.
 - https://stackoverflow.com/questions/11245767/is-chrome-ignoring-cache-control-max-age
 
