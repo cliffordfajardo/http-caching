@@ -1,0 +1,14 @@
+{
+  "name": "http-caching",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon example-1/server.mjs"
+  },
+  "author": "Clifford Fajardo",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
